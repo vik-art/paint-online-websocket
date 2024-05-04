@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component } from '@angular/core';
 import { BUTTONS_LIST } from 'src/app/models/button-list';
 import { ButtonType } from 'src/app/types/toolbar-button-types';
 
@@ -7,13 +8,10 @@ import { ButtonType } from 'src/app/types/toolbar-button-types';
   templateUrl: './toolbar.component.html',
   styleUrls: ['./toolbar.component.scss']
 })
-export class ToolbarComponent implements OnInit {
+export class ToolbarComponent {
   readonly buttonsList = BUTTONS_LIST;
   buttonTypes = ButtonType;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }
