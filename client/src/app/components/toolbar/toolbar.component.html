@@ -1,5 +1,9 @@
 <div class="toolbar button-container">
     <button *ngFor="let button of buttonsList" [class.right-side]="button.right">
-        <img [src]="button.src" alt="" srcset="">
+        <ng-container *ngIf="button.type === buttonTypes.IMG; else input">
+            <img [src]="button.src" alt="" srcset=""></ng-container>
+        <ng-template #input>
+            <input type="color">
+        </ng-template>
     </button>
 </div>

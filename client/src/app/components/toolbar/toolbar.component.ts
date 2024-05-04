@@ -1,4 +1,3 @@
-
 import { Component } from '@angular/core';
 import { BUTTONS_LIST } from 'src/app/models/button-list';
 import { ButtonType } from 'src/app/types/toolbar-button-types';

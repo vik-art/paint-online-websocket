@@ -2,7 +2,8 @@
 @import "../../styles/mixins.scss";
 
 .toolbar {
-    @include bar(0, 2)
+    @include bar(0, 2);
+    padding: 0 10px;
 }
 
 .right-side {
