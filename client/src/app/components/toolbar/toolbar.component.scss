@@ -1,0 +1,10 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.toolbar {
+    @include bar(0, 2)
+}
+
+.right-side {
+   margin-left: auto;
+}

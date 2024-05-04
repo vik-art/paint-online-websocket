@@ -1,0 +1,11 @@
+@mixin bar($top, $index) {
+    width: 100%;
+    height: $toolbar-height;
+    background-color: $white-background-color;
+    display: flex;
+    align-items: center;
+    position: absolute;
+    box-shadow: 0px 4px 5px $grey-shadow;
+    top: $top;
+    z-index: $index;
+}

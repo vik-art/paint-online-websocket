@@ -1,0 +1,6 @@
+@import "../../styles/variables.scss";
+@import "../../styles/mixins.scss";
+
+.setting-bar {
+    @include bar($toolbar-height, 0)
+}
