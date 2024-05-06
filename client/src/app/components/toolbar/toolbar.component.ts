@@ -36,6 +36,15 @@ export class ToolbarComponent {
       case ToolbarButtons.ERASER:
         this.toolService.setTool(new Eraser(canvas));
         break;
+      case ToolbarButtons.UNDO:
+        console.log(this.canvasService.getCanvas());
+        break;
+       case ToolbarButtons.REDO:
+        console.log(this.canvasService.getCanvas());
+        break;
+       case ToolbarButtons.SAVE:
+        console.log(this.canvasService.getCanvas());
+        break;
     }
   }
 

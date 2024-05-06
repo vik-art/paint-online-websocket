@@ -32,18 +32,18 @@ export const BUTTONS_LIST = [
   },
   {
     type: 'img',
-    name: 'undo',
+    name: ToolbarButtons.UNDO,
     src: 'assets/undo.png',
     right: true,
   },
   {
     type: 'img',
-    name: 'redo',
+    name: ToolbarButtons.REDO,
     src: 'assets/redo.png',
   },
   {
     type: 'img',
-    name: 'save',
+    name: ToolbarButtons.SAVE,
     src: 'assets/save.png',
   },
 ];

@@ -9,4 +9,7 @@ export enum ToolbarButtons {
     CIRCLE = "circle",
     LINE = "line",
     ERASER = "eraser",
+    UNDO = "undo",
+    REDO = "redo",
+    SAVE = "save"
 }
