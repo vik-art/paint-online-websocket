@@ -1,12 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { BUTTONS_LIST } from 'src/app/models/button-list';
-import { CanvasService } from 'src/app/state/canvas-state';
-import { ToolService } from 'src/app/state/tool-state';
-import { Brush } from 'src/app/tools/brush';
-import { Circle } from 'src/app/tools/circle';
-import { Eraser } from 'src/app/tools/eraser';
-import { Line } from 'src/app/tools/line';
-import { Rect } from 'src/app/tools/rect';
+import { CanvasService, ToolService } from 'src/app/state';
+import { Brush, Rect, Circle, Line, Eraser } from 'src/app/tools';
 import { ButtonType, ToolbarButtons } from 'src/app/types/toolbar-button-types';
 
 @Component({
