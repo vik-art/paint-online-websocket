@@ -3,6 +3,8 @@ import { BUTTONS_LIST } from 'src/app/models/button-list';
 import { CanvasService } from 'src/app/state/canvas-state';
 import { ToolService } from 'src/app/state/tool-state';
 import { Brush } from 'src/app/tools/brush';
+import { Circle } from 'src/app/tools/circle';
+import { Eraser } from 'src/app/tools/eraser';
 import { Rect } from 'src/app/tools/rect';
 import { ButtonType, ToolbarButtons } from 'src/app/types/toolbar-button-types';
 
@@ -30,6 +32,12 @@ export class ToolbarComponent {
         break;
        case ToolbarButtons.RECT:
         this.toolService.setTool(new Rect(canvas));
+        break;
+      case ToolbarButtons.CIRCLE:
+        this.toolService.setTool(new Circle(canvas));
+        break;
+      case ToolbarButtons.ERASER:
+        this.toolService.setTool(new Eraser(canvas));
         break;
     }
   }

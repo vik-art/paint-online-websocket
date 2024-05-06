@@ -7,5 +7,6 @@ export enum ToolbarButtons {
     BRUSH = "brush",
     RECT = "rect",
     CIRCLE = "circle",
-    LINE = "line"
+    LINE = "line",
+    ERASER = "eraser",
 }

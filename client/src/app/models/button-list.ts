@@ -18,7 +18,7 @@ export const BUTTONS_LIST = [
   },
   {
     type: 'img',
-    name: 'eraser',
+    name: ToolbarButtons.ERASER,
     src: 'assets/eraser.png',
   },
   {
