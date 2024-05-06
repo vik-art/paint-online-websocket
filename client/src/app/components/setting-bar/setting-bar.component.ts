@@ -15,4 +15,8 @@ export class SettingBarComponent {
   setLineWidth(e: any) {
     if (e) this.toolState.setLineWidth(e?.target?.value);
   }
+
+  setLineColor(e: any) {
+    if(e) this.toolState.setStrokeColor(e?.target?.value)
+  }
 }

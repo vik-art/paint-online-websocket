@@ -2,4 +2,6 @@
     <label class="line-label" for="line-width">Line width</label>
     <input (change)="setLineWidth($event)" class="lines" id="line-width" type="number" min="1" max="50"
         [defaultValue]="1" />
+    <label class="line-label second-label" for="line-width">Line color</label>
+    <input (change)="setLineColor($event)" class="lines" id="line-width" type="color" />
 </div>
