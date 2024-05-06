@@ -1,8 +1,16 @@
+import { Injectable } from "@angular/core";
 import { makeObservable } from "mobx";
 
-
-class ToolState {
+@Injectable({
+    providedIn: "root",
+})
+export class ToolService {
+    tool = null;
     constructor() {
          makeObservable(this)
-     }
+    }
+    
+    setTool(tool: any) {
+        this.tool = tool;
+    }
 }
