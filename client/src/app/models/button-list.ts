@@ -1,17 +1,19 @@
+import { ToolbarButtons } from "../types/toolbar-button-types";
+
 export const BUTTONS_LIST = [
   {
     type: 'img',
-    name: 'brush',
+    name: ToolbarButtons.BRUSH,
     src: 'assets/brush.png',
   },
   {
     type: 'img',
-    name: 'rect',
+    name: ToolbarButtons.RECT,
     src: 'assets/rect.png',
   },
   {
     type: 'img',
-    name: 'circle',
+    name: ToolbarButtons.CIRCLE,
     src: 'assets/circle.png',
   },
   {
@@ -21,7 +23,7 @@ export const BUTTONS_LIST = [
   },
   {
     type: 'img',
-    name: 'line',
+    name: ToolbarButtons.LINE,
     src: 'assets/line.png',
   },
   {

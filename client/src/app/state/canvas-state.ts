@@ -1,16 +1,20 @@
-import { Injectable } from '@angular/core';
+import { ElementRef, Injectable } from '@angular/core';
 import { makeObservable } from 'mobx';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CanvasService {
-  canvas = null;
+  canvas: ElementRef<HTMLInputElement> | null = null;
   constructor() {
     makeObservable(this);
   }
 
-  setCanvas(canvas: any) {
+  setCanvas(canvas: ElementRef<HTMLInputElement>) {
     this.canvas = canvas;
+  }
+
+  getCanvas() {
+    return this.canvas?.nativeElement;
   }
 }
