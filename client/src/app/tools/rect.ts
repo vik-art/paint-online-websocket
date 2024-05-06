@@ -51,7 +51,6 @@ export class Rect extends Tool {
         this.ctx?.rect(x, y, w, h);
         this.ctx?.fill();
         this.ctx?.stroke();
-        console.log('draw rect');
       };
     }
   }

@@ -5,6 +5,7 @@ import { ToolService } from 'src/app/state/tool-state';
 import { Brush } from 'src/app/tools/brush';
 import { Circle } from 'src/app/tools/circle';
 import { Eraser } from 'src/app/tools/eraser';
+import { Line } from 'src/app/tools/line';
 import { Rect } from 'src/app/tools/rect';
 import { ButtonType, ToolbarButtons } from 'src/app/types/toolbar-button-types';
 
@@ -23,9 +24,7 @@ export class ToolbarComponent {
   constructor() { }
 
   setTool(button: any) {
-    console.log(button);
     const canvas = this.canvasService.getCanvas();
-    console.log(canvas);
     switch (button.name) {
       case ToolbarButtons.BRUSH:
         this.toolService.setTool(new Brush(canvas));
@@ -35,6 +34,9 @@ export class ToolbarComponent {
         break;
       case ToolbarButtons.CIRCLE:
         this.toolService.setTool(new Circle(canvas));
+        break;
+      case ToolbarButtons.LINE:
+        this.toolService.setTool(new Line(canvas));
         break;
       case ToolbarButtons.ERASER:
         this.toolService.setTool(new Eraser(canvas));

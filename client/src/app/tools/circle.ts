@@ -52,7 +52,6 @@ export class Circle extends Tool {
         this.ctx?.arc(x, y, r, 0, 2 * Math.PI);
         this.ctx?.fill();
         this.ctx?.stroke();
-        console.log('draw rect');
       };
     }
   }
