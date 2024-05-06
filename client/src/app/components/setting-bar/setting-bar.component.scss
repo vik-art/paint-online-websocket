@@ -2,5 +2,14 @@
 @import "../../styles/mixins.scss";
 
 .setting-bar {
-    @include bar($toolbar-height, 0)
+    @include bar($toolbar-height, 0);
+    padding: 0 10px;
+}
+
+.lines {
+    margin-left: 10px;
+}
+
+.line-label {
+    font-weight: 700;
 }

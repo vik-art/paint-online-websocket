@@ -44,4 +44,11 @@ export class ToolbarComponent {
     }
   }
 
+  setColor(e: any) {
+    if (e) {
+      this.toolService.setStrokeColor(e.target.value);
+      this.toolService.setFillColor(e.target.value);
+    }
+  }
+
 }

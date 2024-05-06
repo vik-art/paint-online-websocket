@@ -3,7 +3,7 @@
         <ng-container *ngIf="button.type === buttonTypes.IMG; else input">
             <img [src]="button.src" alt="" srcset=""></ng-container>
         <ng-template #input>
-            <input type="color">
+            <input (change)="setColor($event)" type="color">
         </ng-template>
     </button>
 </div>

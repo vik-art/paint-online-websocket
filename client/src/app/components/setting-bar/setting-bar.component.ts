@@ -1,4 +1,5 @@
-import { Component } from "@angular/core";
+import { Component, inject } from "@angular/core";
+import { ToolService } from "src/app/state/tool-state";
 
 @Component({
   selector: 'app-setting-bar',
@@ -7,6 +8,11 @@ import { Component } from "@angular/core";
 })
 export class SettingBarComponent {
 
+  private toolState = inject(ToolService)
+
   constructor() { }
 
+  setLineWidth(e: any) {
+    if (e) this.toolState.setLineWidth(e?.target?.value);
+  }
 }
