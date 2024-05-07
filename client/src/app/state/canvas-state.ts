@@ -4,7 +4,7 @@ import { makeObservable } from 'mobx';
 @Injectable({
   providedIn: 'root',
 })
-export class CanvasService {
+export class CanvasState {
   canvas: ElementRef<HTMLInputElement> | null = null;
   constructor() {
     makeObservable(this);

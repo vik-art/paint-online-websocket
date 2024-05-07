@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { BUTTONS_LIST } from 'src/app/models/button-list';
-import { CanvasService, ToolService } from 'src/app/state';
+import { CanvasService } from 'src/app/services';
+import { CanvasState, ToolService } from 'src/app/state';
 import { Brush, Rect, Circle, Line, Eraser } from 'src/app/tools';
 import { ButtonType, ToolbarButtons } from 'src/app/types/toolbar-button-types';
 
@@ -13,13 +14,14 @@ export class ToolbarComponent {
   readonly buttonsList = BUTTONS_LIST;
   buttonTypes = ButtonType;
 
-  private canvasService = inject(CanvasService);
-  private toolService = inject(ToolService)
+  private CanvasState = inject(CanvasState);
+  private toolService = inject(ToolService);
+  private canvasService = inject(CanvasService)
 
   constructor() { }
 
   setTool(button: any) {
-    const canvas = this.canvasService.getCanvas();
+    const canvas = this.CanvasState.getCanvas();
     switch (button.name) {
       case ToolbarButtons.BRUSH:
         this.toolService.setTool(new Brush(canvas));
@@ -37,13 +39,13 @@ export class ToolbarComponent {
         this.toolService.setTool(new Eraser(canvas));
         break;
       case ToolbarButtons.UNDO:
-        console.log(this.canvasService.getCanvas());
+        this.canvasService.undo();
         break;
        case ToolbarButtons.REDO:
-        console.log(this.canvasService.getCanvas());
+        this.canvasService.redo();
         break;
        case ToolbarButtons.SAVE:
-        console.log(this.canvasService.getCanvas());
+        console.log(this.CanvasState.getCanvas());
         break;
     }
   }
