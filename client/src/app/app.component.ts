@@ -1,4 +1,4 @@
-import { Component, OnInit, inject } from '@angular/core';
+import { Component, OnInit, inject, signal } from '@angular/core';
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,9 +8,11 @@ import { Router } from '@angular/router';
 })
 export class AppComponent implements OnInit {
   private router = inject(Router);
-  
+  showModal = signal(false)
+
   ngOnInit(): void {
-   this.router.navigate(['/dashboard/', this.getId() ]);
+    this.showModal.set(true)
+  //  this.router.navigate(['/dashboard/', this.getId() ]);
   }
 
   getId(): string {
