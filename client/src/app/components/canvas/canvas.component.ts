@@ -13,6 +13,7 @@ import { Brush } from 'src/app/tools/brush';
   selector: 'app-canvas',
   templateUrl: './canvas.component.html',
   styleUrls: ['./canvas.component.scss'],
+  standalone: true
 })
 export class CanvasComponent implements AfterViewInit {
   @ViewChild('canvas', { read: ElementRef })

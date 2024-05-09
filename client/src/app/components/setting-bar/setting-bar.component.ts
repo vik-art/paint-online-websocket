@@ -4,7 +4,8 @@ import { ToolService } from "src/app/state/tool-state";
 @Component({
   selector: 'app-setting-bar',
   templateUrl: './setting-bar.component.html',
-  styleUrls: ['./setting-bar.component.scss']
+  styleUrls: ['./setting-bar.component.scss'],
+  standalone: true
 })
 export class SettingBarComponent {
 

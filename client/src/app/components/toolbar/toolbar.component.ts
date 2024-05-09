@@ -1,3 +1,4 @@
+import { NgFor, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { BUTTONS_LIST } from 'src/app/models/button-list';
 import { CanvasService } from 'src/app/services';
@@ -8,7 +9,9 @@ import { ButtonType, ToolbarButtons } from 'src/app/types/toolbar-button-types';
 @Component({
   selector: 'app-toolbar',
   templateUrl: './toolbar.component.html',
-  styleUrls: ['./toolbar.component.scss']
+  styleUrls: ['./toolbar.component.scss'],
+  standalone: true,
+  imports: [NgIf, NgFor]
 })
 export class ToolbarComponent {
   readonly buttonsList = BUTTONS_LIST;
