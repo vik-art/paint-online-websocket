@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, inject } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { UserService } from 'src/app/services';
 
 @Component({
   selector: 'app-cannot-access-page',
@@ -9,5 +10,4 @@ import { RouterLink } from '@angular/router';
   styleUrl: './cannot-access-page.component.scss'
 })
 export class CannotAccessPageComponent {
-
 }
