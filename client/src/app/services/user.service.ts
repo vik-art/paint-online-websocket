@@ -1,4 +1,4 @@
-import { Injectable, signal } from "@angular/core";
+import { Injectable } from "@angular/core";
 import { BehaviorSubject } from "rxjs";
 
 @Injectable({
@@ -6,11 +6,11 @@ import { BehaviorSubject } from "rxjs";
 })
 
 export class UserService {
-    user = signal('');
+    user = '';
     authenticated = new BehaviorSubject(false);
 
     setUser(user: string) {
-        this.user.set(user);
-        if (this.user()) this.authenticated.next(true);
+        if (!user) return;
+        this.user = user;
     }
 }
