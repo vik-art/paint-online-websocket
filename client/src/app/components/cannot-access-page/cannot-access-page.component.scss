@@ -1,0 +1,22 @@
+@import "../../styles/variables.scss";
+
+.access-container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../../assets/access-denied.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 40%;
+}
+
+.access-text {
+    color: $white-background-color;
+    text-align: center;
+    font-size: 40px;
+}
+
+.access-text-link {
+    display: block;
+    text-align: center;
+    color: $white-background-color
+}

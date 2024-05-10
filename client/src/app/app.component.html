@@ -1,3 +1,4 @@
 <router-outlet></router-outlet>
 
-<app-greet-modal-window [visible]="showModal()" (hideModal)="hideModal()"></app-greet-modal-window>
+<app-greet-modal-window [visible]="showModal()" (hideModal)="hideModal()"
+    (saveName)="saveUserName($event)"></app-greet-modal-window>

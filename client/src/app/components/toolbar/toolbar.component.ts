@@ -1,8 +1,7 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { BUTTONS_LIST } from 'src/app/models/button-list';
-import { CanvasService } from 'src/app/services';
-import { CanvasState, ToolService } from 'src/app/state';
+import { CanvasService, ToolService } from 'src/app/services';
 import { Brush, Rect, Circle, Line, Eraser } from 'src/app/tools';
 import { ButtonType, ToolbarButtons } from 'src/app/types/toolbar-button-types';
 
@@ -17,7 +16,7 @@ export class ToolbarComponent {
   readonly buttonsList = BUTTONS_LIST;
   buttonTypes = ButtonType;
 
-  private CanvasState = inject(CanvasState);
+  private CanvasState = inject(CanvasService);
   private toolService = inject(ToolService);
   private canvasService = inject(CanvasService)
 

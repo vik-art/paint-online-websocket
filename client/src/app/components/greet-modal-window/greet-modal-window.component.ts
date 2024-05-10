@@ -13,11 +13,17 @@ import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 export class GreetModalWindowComponent {
   name = new FormControl<string>('', [Validators.required, Validators.minLength(3)]);
   @Input() visible?: boolean;
-  @Output() hideModal = new EventEmitter<boolean>()
+  @Output() hideModal = new EventEmitter<boolean>();
+  @Output() saveName = new EventEmitter<string>()
 
   closeModal() {
     this.visible = true;
     this.hideModal.emit(true)
     console.log('the modal was closed')
+  }
+
+  saveUserName() {
+    if (!this.name.value) return;
+    this.saveName.emit(this.name.value);
   }
 }

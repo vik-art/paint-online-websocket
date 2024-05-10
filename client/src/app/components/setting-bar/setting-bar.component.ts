@@ -1,5 +1,5 @@
 import { Component, inject } from "@angular/core";
-import { ToolService } from "src/app/state/tool-state";
+import { ToolService } from "src/app/services";
 
 @Component({
   selector: 'app-setting-bar',

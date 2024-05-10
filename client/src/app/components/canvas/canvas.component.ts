@@ -5,8 +5,7 @@ import {
   ViewChild,
   inject,
 } from '@angular/core';
-import { CanvasService } from 'src/app/services';
-import { CanvasState, ToolService } from 'src/app/state';
+import { CanvasService, ToolService } from 'src/app/services';
 import { Brush } from 'src/app/tools/brush';
 
 @Component({
@@ -18,7 +17,7 @@ import { Brush } from 'src/app/tools/brush';
 export class CanvasComponent implements AfterViewInit {
   @ViewChild('canvas', { read: ElementRef })
   canvas?: any;
-  private canvasState = inject(CanvasState);
+  private canvasState = inject(CanvasService);
   private toolService = inject(ToolService);
   private canvasService = inject(CanvasService)
 

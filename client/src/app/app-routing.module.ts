@@ -2,7 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Route, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { MainPageComponent } from './components/main-page/main-page.component';
+import { MainPageComponent, CannotAccessPageComponent } from './components';
+import { CanActivateUser } from './guards/permissions.service';
+
 
 const routes: Route[] = [
     {
@@ -12,7 +14,13 @@ const routes: Route[] = [
   },
    {
     path: 'dashboard/:id',
-    component: MainPageComponent,
+     component: MainPageComponent,
+    canActivate: [CanActivateUser]
+  },
+   {
+    path: 'access-denied',
+     component: CannotAccessPageComponent,
+     pathMatch: 'full', 
   },
 ]
 
