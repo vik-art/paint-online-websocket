@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { FormControl, ReactiveFormsModule } from '@angular/forms';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-greet-modal-window',
@@ -11,10 +11,13 @@ import { FormControl, ReactiveFormsModule } from '@angular/forms';
   styleUrl: './greet-modal-window.component.scss',
 })
 export class GreetModalWindowComponent {
-  name = new FormControl<string>('');
+  name = new FormControl<string>('', [Validators.required, Validators.minLength(3)]);
   @Input() visible?: boolean;
+  @Output() hideModal = new EventEmitter<boolean>()
 
-  constructor() {
-    console.log('the dialog was opened')
+  closeModal() {
+    this.visible = true;
+    this.hideModal.emit(true)
+    console.log('the modal was closed')
   }
 }

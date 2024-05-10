@@ -12,10 +12,14 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.showModal.set(true)
-  //  this.router.navigate(['/dashboard/', this.getId() ]);
   }
 
   getId(): string {
     return `/${(+new Date()).toString(16)}`
+  }
+
+  hideModal() {
+    this.showModal.set(false);
+     this.router.navigate(['/dashboard/', this.getId() ]);
   }
 }
