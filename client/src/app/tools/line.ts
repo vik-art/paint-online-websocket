@@ -7,7 +7,7 @@ export class Line extends Tool {
     currentY = signal(0);
     saved: any;
 
-  constructor(canvas: HTMLInputElement | undefined) {
+  constructor(canvas: HTMLCanvasElement) {
         super(canvas);
         this.listen()
     }

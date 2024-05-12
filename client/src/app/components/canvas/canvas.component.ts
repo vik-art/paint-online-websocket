@@ -16,7 +16,7 @@ import { Brush } from 'src/app/tools/brush';
 })
 export class CanvasComponent implements AfterViewInit {
   @ViewChild('canvas', { read: ElementRef })
-  canvas?: any;
+  canvas?: ElementRef<HTMLCanvasElement>;
   private canvasState = inject(CanvasService);
   private toolService = inject(ToolService);
   private canvasService = inject(CanvasService)
@@ -24,13 +24,16 @@ export class CanvasComponent implements AfterViewInit {
   constructor() {}
 
   ngAfterViewInit(): void {
-    if (this.canvas) this.canvasState.setCanvas(this.canvas);
-    this.toolService.setTool(new Brush(this.canvas?.nativeElement));
+    if (this.canvas) {
+      const canvas = this.canvas?.nativeElement;
+      this.canvasState.setCanvas(canvas);
+      this.toolService.setTool(new Brush(canvas));
+    }
   }
 
   handleMouseUp() {
-    const currentUrl = this.canvas?.nativeElement?.toDataURL();
+    const currentUrl = this.canvas?.nativeElement.toDataURL();
     this.canvasService.pushToUndoList(currentUrl);
-    this.canvasService.setCanvas(this.canvas);
+    if (this.canvas) this.canvasState.setCanvas(this.canvas.nativeElement);
   }
 }

@@ -1,7 +1,7 @@
 export default class Tool {
-    canvas: any;
+    canvas: HTMLCanvasElement;
     ctx: CanvasRenderingContext2D | null;
-    constructor(canvas: any) {
+    constructor(canvas: HTMLCanvasElement) {
         this.canvas = canvas;
         this.ctx = this.canvas.getContext("2d");
         this.destroyEvents();

@@ -11,6 +11,7 @@ export class ToolService {
     }
     
     setTool(tool: any) {
+        if (!tool) return;
         this.tool = tool;
     }
 

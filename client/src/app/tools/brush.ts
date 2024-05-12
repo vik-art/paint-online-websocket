@@ -5,7 +5,7 @@ export class Brush extends Tool {
 
     mouseDown = signal(false);
 
-    constructor(canvas: any) {
+    constructor(canvas: HTMLCanvasElement) {
         super(canvas);
         this.listen();
     }

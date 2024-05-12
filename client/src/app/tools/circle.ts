@@ -7,7 +7,7 @@ export class Circle extends Tool {
   startY = signal(0);
   saved: string | null = null;
 
-  constructor(canvas: any) {
+  constructor(canvas: HTMLCanvasElement) {
     super(canvas);
     this.listen();
   }
