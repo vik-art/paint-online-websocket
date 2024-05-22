@@ -1,5 +1,10 @@
 @import "../../styles/variables.scss";
 @import "../../styles/mixins.scss";
+@import "../../styles/placeholders.scss";
+
+.button {
+    @extend %button;
+}
 
 .toolbar {
     @include bar(0, 2);

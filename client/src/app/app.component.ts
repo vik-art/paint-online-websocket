@@ -12,6 +12,8 @@ export class AppComponent implements OnInit {
   private userService = inject(UserService);
   private activatedRoute = inject(ActivatedRoute);
   showModal = signal(false);
+  showInfoToast = false;
+  user = ''
 
   ngOnInit(): void {
     this.showModal.set(true);
@@ -39,7 +41,7 @@ export class AppComponent implements OnInit {
     const userName = this.userService.user;
     console.log(userName);
     if (userName) {
-      const socket = new WebSocket('ws://localhost:7000/');
+      const socket = new WebSocket('ws://localhost:4000/');
       socket.onopen = () => {
         console.log('connection started');
         socket.send(
@@ -53,6 +55,9 @@ export class AppComponent implements OnInit {
       socket.onmessage = (event) => {
         const user = JSON.parse(event.data);
         console.log(`User ${user.userName} was connected`);
+        this.showInfoToast = true;
+        this.user = user.userName;
+        setTimeout(() => {this.showInfoToast = false}, 3000)
       };
     }
   }

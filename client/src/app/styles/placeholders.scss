@@ -3,3 +3,10 @@
     align-items: center;
     justify-content: center;
 }
+
+%button {
+    border: none;
+    display: inline-block;
+    background-color: transparent;
+    padding: 10px;
+}

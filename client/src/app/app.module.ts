@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { RouterModule } from '@angular/router';
 import { GreetModalWindowComponent } from './components/greet-modal-window/greet-modal-window.component';
+import { InfoToastComponent } from './components/info-toast/info-toast.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { GreetModalWindowComponent } from './components/greet-modal-window/greet
     BrowserModule,
     AppRoutingModule,
     RouterModule,
-    GreetModalWindowComponent
+    GreetModalWindowComponent,
+    InfoToastComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

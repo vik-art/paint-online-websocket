@@ -1,1 +1,8 @@
-<p>info-toast works!</p>
+@if (visible) {
+<div class="toast-message">
+    <div class="title">
+        <b>New user</b>
+    </div>
+    <div class="toast-text">{{user}} has joined</div>
+</div>
+}

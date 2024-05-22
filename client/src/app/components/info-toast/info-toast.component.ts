@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, signal } from '@angular/core';
 
 @Component({
   selector: 'app-info-toast',
@@ -8,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './info-toast.component.scss'
 })
 export class InfoToastComponent {
-
+  @Input() user: string = '';
+  @Input() visible = false;
 }
